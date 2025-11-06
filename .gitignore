@@ -4,6 +4,9 @@
 # Allow gitignore
 !.gitignore
 
+# Allow all files inside allowed folders
+!*/**
+
 # Whitelist config folders you want to track
 !hypr/
 !kitty/
