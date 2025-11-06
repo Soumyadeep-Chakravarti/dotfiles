@@ -1,0 +1,77 @@
+# Ignore everything by default
+*
+
+# Allow gitignore itself
+!.gitignore
+
+# Allow top-level folders you explicitly manage
+!hypr/
+!kitty/
+!waybar/
+!rofi/
+!swaync/
+!fastfetch/
+!zsh/
+!nvim/
+!AstroNvim/
+!LazyVim/
+!NvChad/
+!NoteVim/
+!kickstart/
+
+# Browsers & tokens (MUST ignore)
+chromium/
+google-chrome/
+BraveSoftware/
+Google/
+microsoftedge/
+vivaldi/
+
+# Apps that store secrets/tokens
+configstore/
+Cursor/
+Claude/
+obsidian/
+Docker Desktop/
+qBittorrent/
+warp/
+warp-terminal/
+
+# Cache / runtime / private data
+pulse/
+procps/
+dconf/
+systemd/
+libaccounts-glib/
+wireplumber/
+unity3d/
+session/
+gtk-3.0/
+gtk-4.0/
+qt5ct/
+qt6ct/
+QtProject.conf
+Kvantum/
+menus/
+pypoetry/
+mise/
+libvirt/
+autostart/
+btop/
+htop/
+mpv/
+swaync/
+
+# Desktop environment noise
+kde*
+plasma*
+xfce4/
+wallust/
+waybar/
+
+# Misc system junk
+*/Cache/
+*/cache/
+*lock*
+*.log
+
