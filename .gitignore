@@ -1,0 +1,48 @@
+# =====================================
+# DEFAULT: IGNORE EVERYTHING
+# =====================================
+*
+
+# Always keep git metadata
+!.gitignore
+!.gitattributes
+!README.md
+
+# =====================================
+# ALLOW: Dotfile configs you care about
+# =====================================
+
+!zsh/
+!zsh/**
+
+!kitty/
+!kitty/**
+
+!nvim/
+!nvim/**
+
+!AstroNvim/
+!AstroNvim/**
+
+!LazyVim/
+!LazyVim/**
+
+!NoteVim/
+!NoteVim/**
+
+!kickstart/
+!kickstart/**
+
+!direnv/
+!direnv/**
+
+# =====================================
+# HARD DENY (belt + suspenders)
+# =====================================
+**/Cache/**
+**/CachedData/**
+**/Service Worker/**
+**/*.asar
+**/*.zwc
+**/.zcompdump*
+
