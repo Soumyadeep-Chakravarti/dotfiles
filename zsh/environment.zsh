@@ -18,8 +18,7 @@ fi
 # Go
 # ----------------------------
 export GOPATH="$HOME/go"
-export GOROOT="/home/linuxbrew/.linuxbrew/Cellar/go/1.23.4/libexec"
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin"
 
 # ----------------------------
 # Rust
