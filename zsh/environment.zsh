@@ -6,6 +6,7 @@
 # Core PATHs
 # ----------------------------
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # ----------------------------
 # Linuxbrew / Homebrew
@@ -98,12 +99,6 @@ export CHROME_EXECUTABLE="/usr/bin/chromium"
 export CUSTOM_SCRIPTS="$HOME/scripts"
 [[ -d "$CUSTOM_SCRIPTS" ]] && export PATH="$CUSTOM_SCRIPTS:$CUSTOM_SCRIPTS/newproj:$PATH"
 
-# ----------------------------
-# Terminal Quran (Optional)
-# ----------------------------
-if [[ $- == *i* && "$RUN_QURAN_VERSE_ON_STARTUP" == "true" ]]; then
-    [[ -f "$HOME/cli/terminal_quran.sh" ]] && source "$HOME/cli/terminal_quran.sh"
-fi
 
 # ----------------------------
 # PATH Clean-up / System-First
@@ -122,4 +117,3 @@ fi
 # python3 --version
 # nvcc --version
 # echo $PATH | tr ':' '\n'
-
