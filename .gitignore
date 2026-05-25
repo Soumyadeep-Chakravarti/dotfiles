@@ -33,6 +33,9 @@
 !kickstart/
 !kickstart/**
 
+!emacs/
+!emacs/**
+
 !direnv/
 !direnv/**
 
