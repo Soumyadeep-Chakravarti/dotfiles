@@ -59,6 +59,8 @@
 
 !starship.toml
 
+!.pre-commit-config.yaml
+
 # =====================================
 # HARD DENY (belt + suspenders)
 # =====================================
@@ -68,4 +70,3 @@
 **/*.asar
 **/*.zwc
 **/.zcompdump*
-
