@@ -36,8 +36,28 @@
 !emacs/
 !emacs/**
 
-!direnv/
-!direnv/**
+!hypr/
+!hypr/**
+
+!waybar/
+!waybar/**
+
+!rofi/
+!rofi/**
+
+!wallust/
+!wallust/**
+
+!swaync/
+!swaync/**
+
+!wlogout/
+!wlogout/**
+
+!ghostty/
+!ghostty/**
+
+!starship.toml
 
 # =====================================
 # HARD DENY (belt + suspenders)
