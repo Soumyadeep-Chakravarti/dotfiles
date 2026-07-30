@@ -21,7 +21,7 @@ If you are interested my currently used personal configuration and setup, you ca
 - [X] kanagawa.nvim
 - [X] mini.statusline
 - [X] oil.nvim
-- [X] Basic options 
+- [X] Basic options
 - [X] vim-sleuth
 - [X] editorconf
 - [X] showkeys
@@ -30,8 +30,7 @@ If you are interested my currently used personal configuration and setup, you ca
 - [X] which-key
 - [X] fzflua
 - [X] project.nvim
-- [X] LSP 
+- [X] LSP
 - [X] Mason
-- [X] dressing.nvim
 - [X] conform.nvim
 - [X] blink-cmp
