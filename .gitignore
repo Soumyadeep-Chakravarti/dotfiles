@@ -1,72 +1,20 @@
-# =====================================
-# DEFAULT: IGNORE EVERYTHING
-# =====================================
-*
+# Nix
+result
+result-*
 
-# Always keep git metadata
-!.gitignore
-!.gitattributes
-!README.md
+# Secrets
+*.key
+*.pem
+*.age
+secrets/
+.env
+.env.*
 
-# =====================================
-# ALLOW: Dotfile configs you care about
-# =====================================
+# Editors / OS
+.direnv/
+.vscode/
+.idea/
+.DS_Store
 
-!zsh/
-!zsh/**
-
-!kitty/
-!kitty/**
-
-!nvim/
-!nvim/**
-
-!AstroNvim/
-!AstroNvim/**
-
-!LazyVim/
-!LazyVim/**
-
-!NoteVim/
-!NoteVim/**
-
-!kickstart/
-!kickstart/**
-
-!emacs/
-!emacs/**
-
-!hypr/
-!hypr/**
-
-!waybar/
-!waybar/**
-
-!rofi/
-!rofi/**
-
-!wallust/
-!wallust/**
-
-!swaync/
-!swaync/**
-
-!wlogout/
-!wlogout/**
-
-!ghostty/
-!ghostty/**
-
-!starship.toml
-
-!.pre-commit-config.yaml
-
-# =====================================
-# HARD DENY (belt + suspenders)
-# =====================================
-**/Cache/**
-**/CachedData/**
-**/Service Worker/**
-**/*.asar
-**/*.zwc
-**/.zcompdump*
+# NixOS generated / temporary
+hardware-configuration.local.nix
