@@ -1,15 +1,21 @@
 # Ignore everything by default
 *
 
+# Allow Git to descend into directories
+!*/
+
 # Keep this file
 !.gitignore
 
 # Config Files
 
-# ZSH
-!./zsh/
-!./zsh/*
+# ZSH 
+!zsh/
+!zsh/**
 
-# Nvim
-!./nvim/
-!./nvim/*
+# Neovim
+!nvim/
+!nvim/**
+
+# Starship 
+!starship.toml

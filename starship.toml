@@ -1,0 +1,84 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$rust\
+$golang\
+$nix_shell\
+$cmd_duration
+$character"""
+
+continuation_prompt = "[.](bright-black) "
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+read_only = " 󰌾"
+
+[git_branch]
+format = " on [$symbol$branch]($style)"
+symbol = " "
+style = "bold purple"
+truncation_symbol = "…"
+
+[git_status]
+format = " [$all_status$ahead_behind]($style)"
+style = "bold red"
+
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[python]
+format = " via [$symbol$version]($style)"
+symbol = "🐍 "
+style = "yellow"
+detect_extensions = ["py"]
+detect_files = ["pyproject.toml", "requirements.txt", "uv.lock", "Pipfile", "setup.py"]
+
+[nodejs]
+format = " via [$symbol$version]($style)"
+symbol = " "
+style = "green"
+
+[rust]
+format = " via [$symbol$version]($style)"
+symbol = " "
+style = "red"
+
+[golang]
+format = " via [$symbol$version]($style)"
+symbol = " "
+style = "cyan"
+
+[nix_shell]
+format = " via [$symbol$state]($style)"
+symbol = "❄️ "
+style = "blue"
+
+[cmd_duration]
+min_time = 2000
+format = " took [$duration]($style)"
+style = "yellow"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
