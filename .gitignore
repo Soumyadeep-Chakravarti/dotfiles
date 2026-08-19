@@ -3,3 +3,13 @@
 
 # Keep this file
 !.gitignore
+
+# Config Files
+
+# ZSH
+!./zsh/
+!./zsh/*
+
+# Nvim
+!./nvim/
+!./nvim/*
