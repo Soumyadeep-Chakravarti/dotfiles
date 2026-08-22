@@ -9,3 +9,6 @@ eval "$(atuin init zsh)"
 
 # Starship
 eval "$(starship init zsh)"
+
+# Direnv
+eval "$(direnv hook zsh)"

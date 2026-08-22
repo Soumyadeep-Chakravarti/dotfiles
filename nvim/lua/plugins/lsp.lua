@@ -17,7 +17,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
-				"pyright",
+				"basedpyright",
 				"rust_analyzer",
 				"clangd",
 				"gopls",
@@ -367,7 +367,7 @@ return {
 				-- Python
 				-- ========================================================
 
-				pyright = {
+				basedpyright = {
 					capabilities = capabilities,
 
 					settings = {
