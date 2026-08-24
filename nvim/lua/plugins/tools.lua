@@ -1,110 +1,110 @@
 return {
-	{
-		"williamboman/mason.nvim",
+    {
+        "williamboman/mason.nvim",
 
-		opts = {
-			ui = {
-				border = "rounded",
-			},
-		},
-	},
+        opts = {
+            ui = {
+                border = "rounded",
+            },
+        },
+    },
 
-	{
-		"stevearc/conform.nvim",
+    {
+        "stevearc/conform.nvim",
 
-		event = { "BufWritePre" },
+        event = { "BufWritePre" },
 
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				python = { "ruff_format" },
-				rust = { "rustfmt" },
-				c = { "clang_format" },
-				cpp = { "clang_format" },
-				go = { "gofumpt" },
+        opts = {
+            formatters_by_ft = {
+                lua = { "stylua" },
+                python = { "ruff_format" },
+                rust = { "rustfmt" },
+                c = { "clang_format" },
+                cpp = { "clang_format" },
+                go = { "gofumpt" },
 
-				javascript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescript = { "prettier" },
-				typescriptreact = { "prettier" },
+                javascript = { "prettier" },
+                javascriptreact = { "prettier" },
+                typescript = { "prettier" },
+                typescriptreact = { "prettier" },
 
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				toml = { "taplo" },
+                json = { "prettier" },
+                yaml = { "prettier" },
+                markdown = { "prettier" },
+                toml = { "taplo" },
 
-				sh = { "shfmt" },
-				bash = { "shfmt" },
-				nix = { "nixfmt" },
-			},
+                sh = { "shfmt" },
+                bash = { "shfmt" },
+                nix = { "nixfmt" },
+            },
 
-			format_on_save = {
-				timeout_ms = 3000,
-				lsp_format = "fallback",
-			},
+            format_on_save = {
+                timeout_ms = 3000,
+                lsp_format = "fallback",
+            },
 
-			notify_on_error = true,
-		},
+            notify_on_error = true,
+        },
 
-		keys = {
-			{
-				"<leader>f",
-				function()
-					require("conform").format({
-						async = true,
-						lsp_format = "fallback",
-					})
-				end,
-				mode = { "n", "v" },
-				desc = "Format",
-			},
-		},
-	},
+        keys = {
+            {
+                "<leader>f",
+                function()
+                    require("conform").format({
+                        async = true,
+                        lsp_format = "fallback",
+                    })
+                end,
+                mode = { "n", "v" },
+                desc = "Format",
+            },
+        },
+    },
 
-	{
-		"mfussenegger/nvim-lint",
+    {
+        "mfussenegger/nvim-lint",
 
-		event = {
-			"BufReadPre",
-			"BufNewFile",
-		},
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
 
-		config = function()
-			local lint = require("lint")
+        config = function()
+            local lint = require("lint")
 
-			lint.linters_by_ft = {
-				lua = {},
-				python = { "ruff" },
-				rust = { "clippy" },
-				c = { "clangtidy" },
-				cpp = { "clangtidy" },
-				go = { "golangcilint" },
+            lint.linters_by_ft = {
+                lua = {},
+                python = { "ruff" },
+                rust = { "clippy" },
+                c = { "clangtidy" },
+                cpp = { "clangtidy" },
+                go = { "golangcilint" },
 
-				javascript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				typescript = { "eslint_d" },
-				typescriptreact = { "eslint_d" },
+                javascript = { "eslint_d" },
+                javascriptreact = { "eslint_d" },
+                typescript = { "eslint_d" },
+                typescriptreact = { "eslint_d" },
 
-				json = { "jsonlint" },
-				yaml = { "yamllint" },
-				markdown = { "markdownlint" },
-				toml = { "taplo" },
-				sh = { "shellcheck" },
-				bash = { "shellcheck" },
-			}
+                json = { "jsonlint" },
+                yaml = { "yamllint" },
+                markdown = { "markdownlint" },
+                toml = { "taplo" },
+                sh = { "shellcheck" },
+                bash = { "shellcheck" },
+            }
 
-			local group = vim.api.nvim_create_augroup("UserLint", {})
+            local group = vim.api.nvim_create_augroup("UserLint", {})
 
-			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-				group = group,
-				callback = function()
-					lint.try_lint()
-				end,
-			})
+            vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+                group = group,
+                callback = function()
+                    lint.try_lint()
+                end,
+            })
 
-			vim.keymap.set("n", "<leader>ll", function()
-				lint.try_lint()
-			end, { desc = "Lint current file" })
-		end,
-	},
+            vim.keymap.set("n", "<leader>ll", function()
+                lint.try_lint()
+            end, { desc = "Lint current file" })
+        end,
+    },
 }
