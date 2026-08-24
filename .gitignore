@@ -26,3 +26,6 @@
 !scripts/
 !scripts/**
 
+# Shared Nix development infrastructure
+!nix/
+!nix/**
