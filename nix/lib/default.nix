@@ -7,8 +7,15 @@ rec {
     eza
   ];
 
-  mkShell = { packages ? [], ... }@args:
-    pkgs.mkShell (args // {
-      packages = basePackages ++ packages;
-    });
+  mkShell =
+    {
+      packages ? [ ],
+      ...
+    }@args:
+    pkgs.mkShell (
+      args
+      // {
+        packages = basePackages ++ packages;
+      }
+    );
 }

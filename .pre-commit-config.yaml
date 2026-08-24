@@ -1,0 +1,37 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+
+  - repo: local
+    hooks:
+      - id: zsh-syntax
+        name: Zsh syntax
+        entry: bash -c 'exec nix develop path:"$PWD/nix"#quality --command zsh -n "$@"' --
+        language: system
+        files: \.zsh$
+
+      - id: lua-format
+        name: Lua format check
+        entry: bash -c 'exec nix develop path:"$PWD/nix"#quality --command stylua --check "$@"' --
+        language: system
+        files: \.lua$
+
+      - id: nix-format
+        name: Nix format check
+        entry: bash -c 'exec nix develop path:"$PWD/nix"#quality --command nixfmt --check "$@"' --
+        language: system
+        files: \.nix$
+
+      - id: nix-flake-check
+        name: Nix flake check
+        entry: bash -c 'nix flake check --no-build path:"$PWD/nix"'
+        language: system
+        pass_filenames: false
+        files: ^nix/

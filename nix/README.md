@@ -9,7 +9,11 @@ Use the reference shells from this repository when needed:
 ```sh
 nix develop ~/dotfiles/nix#python
 nix develop ~/dotfiles/nix#rust
+nix develop ~/dotfiles/nix#quality
 ```
+
+The `quality` shell provides the formatters and linters used by the repository
+pre-commit hooks.
 
 Project flakes should consume the shared helper and use the same `nixpkgs`
 input. For a local dotfiles checkout, a Python project can start with:

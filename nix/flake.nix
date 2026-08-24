@@ -5,27 +5,42 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { nixpkgs, ... }:
+  outputs =
+    { nixpkgs, ... }:
     let
-      systems = [ "x86_64-linux" "aarch64-linux" ];
-      forAllSystems = f:
-        nixpkgs.lib.genAttrs systems (system: f system);
-    in {
-      lib = forAllSystems (system:
-        import ./lib { pkgs = import nixpkgs { inherit system; }; });
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+    in
+    {
+      lib = forAllSystems (system: import ./lib { pkgs = import nixpkgs { inherit system; }; });
 
-      devShells = forAllSystems (system:
+      devShells = forAllSystems (
+        system:
         let
           pkgs = import nixpkgs { inherit system; };
           shared = import ./lib { inherit pkgs; };
           mk = file: import file { inherit pkgs shared; };
-        in {
+        in
+        {
           default = shared.mkShell { };
+          quality = shared.mkShell {
+            packages = with pkgs; [
+              shellcheck
+              shfmt
+              stylua
+              nixfmt
+              zsh
+            ];
+          };
           systems = mk ./shells/systems.nix;
           rust = mk ./shells/rust.nix;
           python = mk ./shells/python.nix;
           web = mk ./shells/web.nix;
           go = mk ./shells/go.nix;
-        });
+        }
+      );
     };
 }
