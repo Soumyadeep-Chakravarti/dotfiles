@@ -24,5 +24,16 @@ vim.diagnostic.config({
         source = "if_many",
         header = "",
         prefix = "",
+        focusable = false,
+        scope = "cursor",
     },
+})
+
+local group = vim.api.nvim_create_augroup("UserDiagnostics", { clear = true })
+
+vim.api.nvim_create_autocmd("CursorHold", {
+    group = group,
+    callback = function()
+        vim.diagnostic.open_float(nil)
+    end,
 })
