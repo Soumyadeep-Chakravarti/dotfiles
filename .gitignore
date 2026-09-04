@@ -19,6 +19,7 @@
 # Neovim
 !nvim/
 !nvim/**
+nvim/lazy-lock.json
 
 # Starship
 !starship.toml
