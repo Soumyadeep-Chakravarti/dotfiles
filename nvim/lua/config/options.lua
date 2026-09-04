@@ -22,8 +22,22 @@ vim.opt.sidescrolloff = 8
 vim.opt.wrap = false
 vim.opt.mouse = "a"
 
-vim.opt.clipboard = "unnamedplus"
+if vim.fn.has("wsl") == 1 then
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = 0,
+    }
+end
 
+vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.swapfile = false
 
