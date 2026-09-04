@@ -12,3 +12,6 @@ eval "$(starship init zsh)"
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+export PATH=$HOME/.opencode/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
