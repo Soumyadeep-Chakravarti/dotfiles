@@ -31,3 +31,7 @@
 # Shared Nix development infrastructure
 !nix/
 !nix/**
+
+# Git configurations
+!git/
+!git/**

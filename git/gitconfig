@@ -1,0 +1,82 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+[user]
+	email = soumyadeepsai1@gmail.com
+	name = Soumyadeep Chakravrti
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+    default = simple
+
+[pull]
+    rebase = true
+
+[rebase]
+    autoStash = true
+
+[fetch]
+    prune = true
+
+[diff]
+    algorithm = histogram
+
+[merge]
+    conflictStyle = zdiff3
+
+[rerere]
+    enabled = true
+
+[alias]
+    # Status
+    st = status
+    s = status --short --branch
+
+    # Staging
+    a = add
+    aa = add --all
+    ap = add --patch
+
+    # Commits
+    c = commit
+    cm = commit -m
+    ca = commit --amend
+    cane = commit --amend --no-edit
+
+    # Branches
+    br = branch
+    sw = switch
+    co = checkout
+
+    # Differences
+    d = diff
+    ds = diff --staged
+    dw = diff --word-diff
+
+    # History
+    lg = log --oneline --graph --decorate
+    last = log -1 --stat
+
+    # Remotes
+    p = push
+    pf = push --force-with-lease
+    pl = pull
+    f = fetch
+    fa = fetch --all --prune
+
+    # Stash
+    ss = stash
+    sp = stash pop
+    sl = stash list
+
+    # Restore
+    r = restore
+    rs = restore --staged
