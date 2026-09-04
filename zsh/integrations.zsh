@@ -1,17 +1,24 @@
+# PATH
+for dir in \
+    "$HOME/.local/bin" \
+    "$HOME/.opencode/bin"
+do
+    [[ -d "$dir" ]] && path=("$dir" $path)
+done
+
+export PATH
+
 # zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
 # fzf
-source <(fzf --zsh)
+command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 
 # Atuin
-eval "$(atuin init zsh)"
+command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh)"
 
 # Starship
-eval "$(starship init zsh)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
 # Direnv
-eval "$(direnv hook zsh)"
-
-export PATH=$HOME/.opencode/bin:$PATH
-export PATH="$HOME/.local/bin:$PATH"
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
